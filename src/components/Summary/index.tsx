@@ -5,7 +5,21 @@ import { useTransactionsContext } from '../../hooks/useTransactionsContext';
 export function Summary() {
   const { transactions } = useTransactionsContext();
 
-  console.log(transactions);
+  // {income: 0, outcome: 0, total: 0}
+  const summary = transactions.reduce(
+    (acc, transaction) => {
+      if (transaction.type === 'income') {
+        acc.income += transaction.amount;
+        acc.total += transaction.amount;
+      } else {
+        acc.outcome += transaction.amount;
+        acc.total -= transaction.amount;
+      }
+
+      return acc;
+    },
+    { income: 0, outcome: 0, total: 0 }
+  );
 
   return (
     <SummaryContainer>
@@ -14,21 +28,21 @@ export function Summary() {
           <span>Entradas</span>
           <ArrowCircleUp size={32} color='#00b37e' />
         </header>
-        <strong>R$ 17.400,00</strong>
+        <strong>{summary.income}</strong>
       </SummaryCard>
       <SummaryCard>
         <header>
           <span>Saídas</span>
           <ArrowCircleDown size={32} color='#f75a68' />
         </header>
-        <strong>R$ 17.400,00</strong>
+        <strong>{summary.outcome}</strong>
       </SummaryCard>
       <SummaryCard variant='green'>
         <header>
           <span>Total</span>
           <CurrencyDollar size={32} color='#ffffff' />
         </header>
-        <strong>R$ 17.400,00</strong>
+        <strong>{summary.total}</strong>
       </SummaryCard>
     </SummaryContainer>
   );

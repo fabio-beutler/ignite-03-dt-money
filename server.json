@@ -5,7 +5,7 @@
       "description": "Desenvolvimento de site",
       "type": "income",
       "category": "Venda",
-      "amount": 1400,
+      "amount": 14000,
       "createdAt": "2021-03-01T12:13:44.000Z"
     },
     {
@@ -14,6 +14,14 @@
       "type": "outcome",
       "category": "Alimentação",
       "amount": 50,
+      "createdAt": "2021-03-01T12:23:44.000Z"
+    },
+    {
+      "id": 3,
+      "description": "Ignite Rocketseat",
+      "type": "outcome",
+      "category": "Curso",
+      "amount": 1500,
       "createdAt": "2021-03-01T12:23:44.000Z"
     }
   ]
