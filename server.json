@@ -23,6 +23,30 @@
       "category": "Educação",
       "amount": 1500,
       "createdAt": "2021-03-01T12:23:44.000Z"
+    },
+    {
+      "description": "Desenvolvimento de app",
+      "amount": 10000,
+      "category": "Venda",
+      "type": "income",
+      "createdAt": "2023-04-29T00:24:19.937Z",
+      "id": 4
+    },
+    {
+      "description": "teste",
+      "amount": 12,
+      "category": "teste",
+      "type": "income",
+      "createdAt": "2023-04-29T00:33:46.957Z",
+      "id": 5
+    },
+    {
+      "description": "teste2",
+      "amount": 13,
+      "category": "teste",
+      "type": "income",
+      "createdAt": "2023-04-29T00:35:27.891Z",
+      "id": 6
     }
   ]
 }
