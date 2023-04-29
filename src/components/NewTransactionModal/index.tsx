@@ -10,7 +10,8 @@ import {
 import * as zod from 'zod';
 import { Controller, useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
-import { useTransactionsContext } from '../../hooks/useTransactionsContext';
+import { useContextSelector } from 'use-context-selector';
+import { TransactionsContext } from '../../contexts/TransactionsContext';
 
 const newTransactionFormSchema = zod.object({
   description: zod.string().min(3, 'Descrição muito curta'),
@@ -24,7 +25,10 @@ const newTransactionFormSchema = zod.object({
 type NewTransactionFormData = zod.infer<typeof newTransactionFormSchema>;
 
 export function NewTransactionModal() {
-  const { createTransaction } = useTransactionsContext();
+  const createTransaction = useContextSelector(
+    TransactionsContext,
+    (ctx) => ctx.createTransaction
+  );
 
   const {
     control,
