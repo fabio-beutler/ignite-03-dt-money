@@ -10,7 +10,6 @@ import {
 import * as zod from 'zod';
 import { Controller, useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
-import { api } from '../../lib/axios';
 import { useTransactionsContext } from '../../hooks/useTransactionsContext';
 
 const newTransactionFormSchema = zod.object({
